@@ -21,3 +21,5 @@ sidebar-category:
         url:  "/projects"
       - title: "Sundry"
         url:  "/sundry" 
+      - title: "Portfolio"
+        url:  "/portfolio" 
