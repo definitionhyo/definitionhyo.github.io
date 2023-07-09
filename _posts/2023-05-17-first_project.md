@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "1st team project(itwillbs)"
+title:  "정의효 | 백엔드 개발자"
 categories:
   - portfolio
 ---
@@ -12,10 +12,12 @@ categories:
 ## Skills
 <!-- Strong = 잘하는것 -->
 
-## Knowledgeable <!-- 써본것 -->
+### Knowledgeable <!-- 써본것 -->
 Java / Spring(mybatis) / MySQL(dbeaver)
 JavaScript 
 
-## ETC
+### ETC
 Git
 
+## Projects
+### 
