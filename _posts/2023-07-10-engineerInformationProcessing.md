@@ -293,7 +293,9 @@ categories:
   * 샘플링 오라클 : 특정한 몇몇 테스트 케이스의 입력 값들에 대해서만 / 전수 테스트가 불가능한 경우
   * 추정 오라클 : 특정 테스트 케이스의 입력값에 대해 기대하는 결과를 제공, 나머지 입력 값들에 대해서는 추정으로 처리
   * 일관성 검사 오라클 : 애플리케이션에 변경이 있을 때 수행 전과 후의 결과 값이 동일한지를 확인하는 오라클
-
+* 소스 코드 품질 분석 도구
+  * 정적 분석 도구 : 작성한 소스 코드를 실행하지 않고
+  * 동적 분석 도구 : 작성한 소스 코드를 실행하여
 
 
 ## 중요도 <span style="color:#0000ff">B</span><br>
@@ -309,3 +311,104 @@ categories:
   * 테스트 동제 도구 
   * 테스트 하네스 도구
 * 결함 : <b>소프트웨어가 개발자가 설계한 것과 다르게 동작하거나 다른 결과가 발생되는것</b>
+
+# 8장 SQL응용
+
+## 중요도 <span style="color:red">A</span><br>
+* CREATE INDEX
+```
+CREATE [UNIQUE] INDEX 인덱스명
+ON 테이블명(속성명 [ASC|DESC] [,속성명 [ASC|DESC]])
+[CLUSTER];
+```
+
+* ALTER TABLE
+```
+ALTER TABLE 테이블명 ADD 속성명 데이터타입 [DEFAULT '기본값'];
+ALTER TABLE 테이블명 ALTER 속성명 [SET DEFAULT '기본값'];
+ALTER TABLE 테이블명 DROP COLUMN 속성명 [CASCADE];
+```
+
+* GRANT / REVOKE
+  * GRANT : 권한 부여를 위한 명령어<br>
+    REVOKE : 권한 취소를 위한 명령어
+  * 권한 종류(권한_리스트) : ALL, SELECT, INSERT, DELETE, UPDATE등
+  * WITH GRANT OPTION : 부여받은 권한을 다른 사용자에게 다시 부여할 수 있는 권한을 부여
+  * GRANT OPTION FOR : 다른 사용자에게 권한을 부여할 수 있는 권한을 취소함
+  * CASCADE : 권한 취소 시 부여받았던 사용자가 다른사용자에게 부여한 권한도 연쇄적으로 취소
+```
+GRANT 권한_리스트 ON 개체 TO 사용자 [WITH GRANT OPTION];
+REVOKE [GRANT OPTION FOR] 권한_리스트 ON 개체 FROM 사용자 [CASCADE];
+``` 
+
+* ROLLBACk : <b>변경되었으나 아직 COMMIT되지 않은 모든 내용들을 취소하고 데이터베이스를 이전 상태로 되돌리는 명령어</b>
+
+* 삭제문 DELETE FROM
+```
+DELETE FROM 테이블명 [WHERE 조건];
+```
+
+  * 모든 레코드를 삭제할떄는 WHERE절 생략
+  * 삭제해도 테이블 구조는 존재, 구조삭제는 DROP
+
+* 갱신 UPDATE~ SET~
+```
+UPDATE 테이블명
+SET 속성명=데이터 [, 속성명=데이터, ···]
+[WHERE 조건];
+```
+
+* SELECT
+  * PREDICATE : 검색할 튜플 수를 제한하는 명령어
+    * ex) DISTINCT : 중복된 튜플이 있으면 그중 첫번째 한개만 표시
+```
+SELECT [PREDICATE] [테이블명.]속성명 [AS 별칭][, [테이블명.]속성명, ···]
+FROM 테이블명[, 테이블명 ···]
+[WHERE 조건]
+[GROUP BY 속성명, 속성명, ···]
+[HAVING 조건]
+[ORDER BY 속성명 [ASC|DESC]];
+```
+
+* 조건 지정 검색
+  * 비교연산자
+    * <> : 같지않다
+  * 논리 연산자 : NOT, AND, OR
+  * LIKE 연산자 : 대표 문자를 이용해 지정된 속성의 값이 문자 패턴과 일치하는 튜플을 검색하기 위해 사용
+    * % : 모든 문자를 대표
+    * _ : 문자 하나를 대표
+    * \# : 숫자 하나를 대표
+  * IN 연산자 : 필드의 값이 IN 연산자 수로 지정된 값과 같은 레코드만 검색하며 OR 연산을 수행한 결과와 같음<br> ex) 3,4학년의 조건 =  WHERE 학년 IN(3,4)
+
+* 날짜데이터의경우 ''이아닌 ##으로 묶는다 ex) #01/01/1992#
+
+
+
+## 중요도 <span style="color:#0000ff">B</span><br>
+* DDL : DB를 구축 or 수정할 목적으로 사용하는 언어
+  * CREATE, ALTER, DROP
+
+* DROP
+  * CASCADE : 제거할 요소를 참조하는 다른 모든 개체를 함께 제거
+  * RESTRICT : 다른 개체가 제거할 요소를 참조중일 때는 제거를 취소
+```
+DROP SCHEMA 스키마명 [CASCADE|RESTRICT];
+DROP DOMAIN 도메인명 [CASCADE|RESTRICT];
+DROP TABLE 테이블명 [CASCADE|RESTRICT];
+DROP VIEW 뷰명 [CASCADE|RESTRICT];
+DROP INDEX 인덱스명 [CASCADE|RESTRICT];
+DROP CONSTRAINT 제약조건명;
+```
+
+* DCL : 데이터의 보안, 무결성, 회복, 병행제어 등을 정의하는데 사용하는 언어
+  * COMMIT, ROLLBACK, GRANT, REVOKE
+
+* DML : <b>저장된 데이터를 실질적으로 관리하는데 사용되는 언어</b>
+   * SELECT, INSERT, DELETE, UPDATE
+
+* 삽입문 INSERT INTO
+```
+INSERT INTO 테이블명([속성명1, 속성명2, ···])
+VALUES (데이터1, 데이터2, ···);
+```
+
