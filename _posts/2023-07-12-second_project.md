@@ -34,3 +34,10 @@ https://blog.naver.com/itwillbusan01
 요구사항분석 후 유스케이스 -> 클래스 -> 시퀀스 순으로만듬 
 
 만들기 유스케이스, 클래스, 시퀀스, 메뉴기능구조도
+
+# 0720 핀테크 관련
+* postman 설치
+* OAuth(Open Authorization) 2.0
+* https://developers.kftc.or.kr/dev = 금융결제원 오픈APi 개발자사이트
+* 포트폴리오 기술스택에 RESTful API(카카오로그인도 이거임)
+* 
