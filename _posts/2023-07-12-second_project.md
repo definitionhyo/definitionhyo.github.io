@@ -40,4 +40,6 @@ https://blog.naver.com/itwillbusan01
 * OAuth(Open Authorization) 2.0
 * https://developers.kftc.or.kr/dev = 금융결제원 오픈APi 개발자사이트
 * 포트폴리오 기술스택에 RESTful API(카카오로그인도 이거임)
-* 
+
+# 0724 Rest 사용 프로젝트
+* https://mybatis.org/mybatis-3/ko/configuration.html#typeAliases
