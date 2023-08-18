@@ -43,3 +43,8 @@ https://blog.naver.com/itwillbusan01
 
 # 0724 Rest 사용 프로젝트
 * https://mybatis.org/mybatis-3/ko/configuration.html#typeAliases
+
+# 0818 2차프로젝트 발표 시연 피드백
+* 보완점 - 포트폴리오에 사용할 보완점은 기능별로 적기, 추가로 구현할 기능은 따로 적기
+<br> 우리팀은 그대로 써도 될듯
+
