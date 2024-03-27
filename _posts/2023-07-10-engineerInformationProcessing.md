@@ -3,15 +3,15 @@ layout: single
 title:  "정보처리기사"
 categories:
   - sundry
+published : false
 ---
 
-# 실기 암기할 것
-
-<!-- 실기시험 2차 56점 불합격 후 09/23 시작 10/07 시작 -->
-
-## 1-1 요구사항 확인 1 
+# 1-1 요구사항 확인 1 
 ## 중요도 <span style="color:red">A</span><br>
 
+<details>
+  <summary></summary>
+</details>
 * 애자일 모형 : 고객의 <b>요구사항 변화에 유연하게 대응할 수 있도록 일정한 주기를 반복하면서 개발하는 모형</b>
   * 고객과의 소통에 초점을 맞춘 방법론을 통칭
   * 대표적인 개발모형 
@@ -222,9 +222,11 @@ categories:
 * 스테레오 타입
   <br> - UML에서 표현하는 <b>기본 기능 외에 추가적인 기능을 표현하는 것</b>
   <br> - 길러멧(Guilemet)이라고 부르는 겹화살괄호(<< >>) 사이에 표현할 형태를 기술
+  
+<br>
 
 
-## 1-2 요구사항 확인 2 
+# 1-2 요구사항 확인 2 
 ## 중요도 <span style="color:red">A</span><br>
 
 * 유스케이스 다이어그램
@@ -295,7 +297,7 @@ categories:
   <br> - <b>조직 생명 주기 프로세스</b>
   <br> &nbsp;&nbsp; : 관리, 기반 구조, 훈련, 개선 프로세스
 
-*SPICE의 프로세스 수행 능력 단계(0~5 불수관확예최)
+* SPICE의 프로세스 수행 능력 단계(0~5 불수관확예최)
   <br> &nbsp;&nbsp; - 0 불완전 | 1 수행 | 2 관리 | 3 확립 | 4 예측 | 5 최적화
 
 ## 중요도 <span style="color:#0000ff">B</span><br>
@@ -1096,7 +1098,7 @@ categories:
 
 ## 중요도 <span style="color:red">A</span><br>
 * CREATE INDEX
-```
+```sql
 CREATE [UNIQUE] INDEX 인덱스명
 ON 테이블명(속성명 [ASC|DESC] [,속성명 [ASC|DESC]])
 [CLUSTER];
