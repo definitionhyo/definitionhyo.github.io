@@ -7,12 +7,13 @@ published : false
 ---
 
 # 1-1 요구사항 확인 1 
-## 중요도 <span style="color:red">A</span><br>
+### 중요도 <span style="color:red">A</span><br>
 
 <details>
   <summary></summary>
-</details>
-* 애자일 모형 : 고객의 <b>요구사항 변화에 유연하게 대응할 수 있도록 일정한 주기를 반복하면서 개발하는 모형</b>
+  <div markdown="1">
+
+  * 애자일 모형 : 고객의 <b>요구사항 변화에 유연하게 대응할 수 있도록 일정한 주기를 반복하면서 개발하는 모형</b>
   * 고객과의 소통에 초점을 맞춘 방법론을 통칭
   * 대표적인 개발모형 
     * 스크럼
@@ -125,9 +126,16 @@ published : false
   <br> - <b>사물이 할 수 있거나 해야하는 기능으로, 서로를 그룹화 할 수 있는 관계</b>
   <br> - 한 객체가 다른 객체에서 오퍼레이션을 수행하도록 지정하는 의미적 관계
   <br> - 사물에서 기능 쪽으로 속이 빈 점선 화살표를 연결하여 표현
+  </div>
+</details>
 
-## 중요도 <span style="color:#0000ff">B</span><br>
 
+### 중요도 <span style="color:#0000ff">B</span><br>
+
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
 * 나선형 모형 : <b>여러 번의 소프트웨어 개발 과정을 거쳐 점진적으로</b> 완벽한 최종 소프트 웨어를 <b>개발하는 모형</b>
   * 보헴이 제안
   * <b>4가지 주요 활동</b><br>
@@ -222,13 +230,29 @@ published : false
 * 스테레오 타입
   <br> - UML에서 표현하는 <b>기본 기능 외에 추가적인 기능을 표현하는 것</b>
   <br> - 길러멧(Guilemet)이라고 부르는 겹화살괄호(<< >>) 사이에 표현할 형태를 기술
-  
+  </div>
+</details>
+
+### 중요도 <span style="color:green">C</span><br>
+
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+  </div>
+</details>
+
+
 <br>
 
 
 # 1-2 요구사항 확인 2 
-## 중요도 <span style="color:red">A</span><br>
+### 중요도 <span style="color:red">A</span><br>
 
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
 * 유스케이스 다이어그램
   <br> - 사용자와 다른 외부 시스템들이 <b>개발될 시스템을 이용해 수행할 수 있는 기능을 사용자의 관점에서 표현한 것</b>
   <br> - 액터 
@@ -299,9 +323,17 @@ published : false
 
 * SPICE의 프로세스 수행 능력 단계(0~5 불수관확예최)
   <br> &nbsp;&nbsp; - 0 불완전 | 1 수행 | 2 관리 | 3 확립 | 4 예측 | 5 최적화
+    </div>
+</details>
 
-## 중요도 <span style="color:#0000ff">B</span><br>
 
+
+### 중요도 <span style="color:#0000ff">B</span><br>
+
+<details>
+    <summary></summary>
+    <div markdown="1">
+    내용
 * 시퀀스 다이어그램
   <br> - <b>시스템이나 객체들이 메시지를 주고받으며 상호작용하는 과정을 그림으로 표현한 것</b>
   * 시퀀스 다이어그램의 구성요소
@@ -361,11 +393,27 @@ published : false
     <br> &nbsp;&nbsp; - 다형성을 통한 인터페이스 확장이 가능
   <br> * <b>제어의 역흐름</b>
     <br> &nbsp;&nbsp; - 객체들의 제어를 프레임워크에 넘겨서 생산성을 향상
+    </div>
+</details>
 
 
-## 2-1 데이터 입·출력 구현 1
-## 중요도 <span style="color:red">A</span><br>
 
+### 중요도 <span style="color:green">C</span><br>
+
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+  </div>
+</details>
+
+# 2-1 데이터 입·출력 구현 1
+### 중요도 <span style="color:red">A</span><br>
+
+<details>
+    <summary></summary>
+    <div markdown="1">
+    
 * 스키마 : <b>데이터베이스의 구조와 제약조건에 관한 전반적인 명세를 기술한 것</b>
    종류 | 내용 |
   ---------|----------|
@@ -461,15 +509,16 @@ published : false
    일관성(Consistency) | 트랜잭션이 실행을 성공적으로 완료하면 언제나 일관성 있는 데이터베이스 상태로 변환 |
    독립성, 격리성, 순차성(Isolation) | 트랜잭션 실행중에 다른 트랜잭션의 연산이 끼어들 수 없음 |
    영속성, 지속성(Durability) | 시스템이 고장나더라도 영구적으로 반영되어야함 |
+    </div>
+</details>
 
 
+### 중요도 <span style="color:#0000ff">B</span><br>
 
-
-
-
-
-## 중요도 <span style="color:#0000ff">B</span><br>
-
+<details>
+    <summary></summary>
+    <div markdown="1">
+    
 * E-R 다이어그램
 <br>
    기호이름 | 의미 |
@@ -539,11 +588,29 @@ published : false
 
 * 인덱스
   <br> - <b>데이터 레코드를 빠르게 접근하기 위해 <키 값, 포인터> 쌍으로 구성되는 데이터</b>
+    </div>
+</details>
 
 
-## 2-2 데이터 입·출력 구현 2
-## 중요도 <span style="color:red">A</span><br>
 
+
+
+### 중요도 <span style="color:green">C</span><br>
+
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+  </div>
+</details>
+
+# 2-2 데이터 입·출력 구현 2
+### 중요도 <span style="color:red">A</span><br>
+
+<details>
+    <summary></summary>
+    <div markdown="1">
+    
 * 뷰
   <br> - <b>하나 이상의 기본 테이블로부터 유도된 가상테이블</b>
   <br> - CREATE 문으로 정의, DROP 문으로 제거
@@ -615,9 +682,15 @@ published : false
   <br> 3회전 : 25468 -> 24568
   <br> 4회전 : 24568
   <br> - 앞에서부터 2개씩 비교 1번2번, 2번3번, 3번4번~
+    </div>
+</details>
 
-## 중요도 <span style="color:#0000ff">B</span><br>
+### 중요도 <span style="color:#0000ff">B</span><br>
 
+<details>
+    <summary></summary>
+    <div markdown="1">
+    
 * 파티션의 종류
   * 범위 분할</b>
   * 해시 분할</b>
@@ -659,10 +732,25 @@ published : false
 * 2-Way 합병 정렬
   <br> - <b>두 개의 파일을 한 개의 파일로 합병하는 정렬 방식</b>
   <br> - 시간복잡도 O(nlog<sub>2</sub>n)
+    </div>
+</details>
 
-## 3장 통합 구현
-## 중요도 <span style="color:red">A</span><br>
+### 중요도 <span style="color:green">C</span><br>
 
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+  </div>
+</details>
+
+# 3장 통합 구현
+### 중요도 <span style="color:red">A</span><br>
+
+<details>
+    <summary></summary>
+    <div markdown="1">
+    
 * 연계 서버 / 송·수신 시스템
   * <b>연계 서버</b> : 데이터를 전송 형식에 맞게 변환하고 송·수신을 수행하는 등 송·수신과 관련된 모든 처리 수행
   * <b>송신 시스템</b> : 인터페이스 테이블 또는 파일의 데이터를 전송 형식에 맞도록 변환 및 송신을 수행하는 시스템(인터페이스를 구성하는 시스템)
@@ -677,14 +765,37 @@ published : false
 * WSDL
   <br> - <b>웹 서비스와 관련된 서식이나 프로토콜 등을 표준적인 방법으로 기술하고 게시하기 위한 언어</b>
   <br> - XML로 작성되며, UDDI의 기초가 됨
+    </div>
+</details>
 
-## 중요도 <span style="color:#0000ff">B</span><br>
+### 중요도 <span style="color:#0000ff">B</span><br>
 
-* 연계 매커니즘
+<details>
+  <summary></summary>
+  <div markdown="1">
+  
+  * 연계 매커니즘
   * <b>로그</b> : 사용자가 컴퓨터에 요청한 명령이나 컴퓨터가 데이터를 처리하는 과정 및 결과등을 기록으로 남긴 것
+  </div>
+</details>
 
-## 4-1 서버 프로그램 구현1
-## 중요도 <span style="color:red">A</span><br>
+### 중요도 <span style="color:green">C</span><br>
+
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+  </div>
+</details>
+
+# 4-1 서버 프로그램 구현1
+### 중요도 <span style="color:red">A</span><br>
+
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+
 
 * 모듈화
   <br> - <b>시스템의 기능들을 모듈 단위로 나누는 것</b>
@@ -726,8 +837,16 @@ published : false
     * 동적 모델링(Dynamic Modeling) : 상태 다이어그램을 이용하여 시간의 흐름에 따른 객체들 간의 제어 흐름, 상호 작용, 동작 순서 등의 동적인 행위를 표현하는 모델링
     <br>ex) 상태 변화도(STD)
     * 기능 모델링(Functional Modeling) : 자료 흐름도(DFD)를 이용하여 다수의 프로세스들 간의 자료 흐름을 중심으로 처리 과정을 표현한 모델링
+  </div>
+</details>
 
-## 중요도 <span style="color:#0000ff">B</span><br>
+
+### 중요도 <span style="color:#0000ff">B</span><br>
+
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
 
 * 상위 설계와 하위 설계<br>
     &nbsp; | 상위 설계<span style="color:red"><small> * 20.9</small></span> | 하위 설계 |
@@ -789,9 +908,26 @@ published : false
   * LSP(리스코프 치환 원칙) : 자식 클래스는 최소한 부모 클래스의 기능은 수행할 수 있어야 한다는 원칙
   * ISP(인터페이스 분리 원칙) : 자신이 사용하지 않는 인터페이스와 의존 관계를 맺거나 영향을 받지 않아야 한다는 원칙
   * DIP(의존 역전 원칙) : 의존 관계 성립 시 추상성이 높은 클래스와 의존 관계를 맺어야 한다는 원칙
+  </div>
+</details>
 
-## 4-2 서버 프로그램 구현2
-## 중요도 <span style="color:red">A</span><br>
+### 중요도 <span style="color:green">C</span><br>
+
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+  </div>
+</details>
+
+# 4-2 서버 프로그램 구현2
+### 중요도 <span style="color:red">A</span><br>
+
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+    
 
 * 팬인 : <b>어떤 모듈을 제어하는 모듈의 수</b> = <b>모듈에 In 되는 Line 개수 = 들어오는 선의 수</b>
  
@@ -834,9 +970,17 @@ published : false
   * 전략 : 동일한 계열의 알고리즘들을 개별적으로 캡슐화하여 상호 교환할 수 있게 정의하는 패턴
   * 템플릿 메소드 : 상위 클래스에서 골격을 정의, 하위 클래스에서 세부 처리를 구체화 하는 구조의 패턴
   * 방문자 : 각 클래스들의 데이터 구조에서 처리 기능을 분리하여 별도의 클래스로 구성하는 패턴
+  </div>
+</details>
 
 
-## 중요도 <span style="color:#0000ff">B</span><br>
+### 중요도 <span style="color:#0000ff">B</span><br>
+
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+    
 
 * 모듈 : <b>모듈화를 통해 분리된 시스템의 각 기능</b>, 하나 또는 몇개의 논리적인 기능을 수행하기 위한 명령어들의 집합
 
@@ -894,12 +1038,29 @@ published : false
   * 견고성 : 시스템의 중단없는 지속 능력
   * 안정성/신뢰성 : 오류 추적 능력
   * 성능 : 작업 수행 능력
+  </div>
+</details>
 
 <!-- -------------------------------------------------------------- --->
 
-## 5 인터페이스 구현
+### 중요도 <span style="color:green">C</span><br>
 
-## 중요도 <span style="color:red">A</span><br>
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+  </div>
+</details>
+
+# 5 인터페이스 구현
+
+### 중요도 <span style="color:red">A</span><br>
+
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+    
 
 * 미들웨어의 종류<br>
   DRM TOW = DRM 토우
@@ -930,8 +1091,16 @@ published : false
   * NTAF : Fitness(협업) + STAF(재사용 및 확장성) 장점을 통합한 NHN(Naver)의 테스트 자동화 프레임워크
   * Selenium : 다양한 브라우저 및 개발언어 지원
   * watir : Ruby(인터프리터 방식의 객체 지향 스크립트언어)를 사용하는 애플리케이션 테스트 프레임워크
+  </div>
+</details>
 
-## 중요도 <span style="color:#0000ff">B</span><br>
+### 중요도 <span style="color:#0000ff">B</span><br>
+
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+    
 
 * 요구사항 검증 방법
   * 요구사항 검토
@@ -968,10 +1137,27 @@ published : false
   * Fcheck
 
 * APM : <b>애플리케이션의 성능 관리를 위해 다양한 모니터링 기능을 제공하는 도구</b>
+  </div>
+</details>
 
-## 6장 화면 설계
+### 중요도 <span style="color:green">C</span><br>
 
-## 중요도 <span style="color:red">A</span><br>
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+  </div>
+</details>
+
+# 6장 화면 설계
+
+### 중요도 <span style="color:red">A</span><br>
+
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+    
 
 * UI : <b>사용자와 시스템 간의 상호작용이 이뤄지도록 도와주는 장치나 소프트웨어</b>
 * UX : <b>사용자가 시스템이나 서비스를 이용하면서 느끼고 생각하게 되는 총체적인 경험</b>
@@ -999,18 +1185,43 @@ published : false
   * 효율성 : 얼마나 빠르게
   * 유지 보수성 : 개선, 확장할수있는정도
   * 이식성 : 다른 환경에서도 얼마나 쉽게 적용할수있는지
+  </div>
+</details>
 
-## 중요도 <span style="color:#0000ff">B</span><br>
+### 중요도 <span style="color:#0000ff">B</span><br>
+
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+    
 
 * UI 설계도구
   * 와이어프레임 : <b>페이지에 대한 개략적인 레이아웃 등 뼈대를설계하는 도구</b>
   * 목업 : 와이어프레임보다 좀 더 <b>실제 화면과 유사하게 만든 정적인 형태의 모형</b>
   * 스토리보드 : <b>와이어프레임에 콘텐츠에 대한 설명, 페이지 간 이동 흐름 등을 추가한 문서</b>
   * 프로토타입 : <b>실제 구현된 것처럼 테스트가 가능한 동적인 형태의 모형</b>
+  </div>
+</details>
   
-## 7장 애플리케이션 테스트 관리
+### 중요도 <span style="color:green">C</span><br>
 
-## 중요도 <span style="color:red">A</span><br>
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+  </div>
+</details>
+
+# 7장 애플리케이션 테스트 관리
+
+### 중요도 <span style="color:red">A</span><br>
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+    
+
 * 애플리케이션 테스트의 기본원리
   * 파레토 법칙 : 애플리케이션의 20%에 해당하는 코드에서 전체 결함의 80%가 발견된다는 법칙
   * 살충제 패러독스 : 동일한 테스트 케이스로 동일한 테스트를 반복하면 더 이상 결함이 발견되지 않는 현상
@@ -1078,9 +1289,17 @@ published : false
 * 소스 코드 품질 분석 도구
   * 정적 분석 도구 : 작성한 소스 코드를 실행하지 않고
   * 동적 분석 도구 : 작성한 소스 코드를 실행하여
+  </div>
+</details>
 
 
-## 중요도 <span style="color:#0000ff">B</span><br>
+### 중요도 <span style="color:#0000ff">B</span><br>
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+    
+
 * 화이트박스 테스트 : <b>원시코드의 논리적인 모든 경로를 테스트하여 테스트 케이스를 설계하는 방법</b>
 * 인수 테스트 : <b>사용자의 요구사항을 충족하는지에 중점을 두고 테스트</b>
   * 알파테스트 : 개발자의 장소에서 사용자가 개발자 앞에서 행함 / 테스트는 통제된 환경, 사용자와 개발자가 함께 확인하면서 기록함
@@ -1093,10 +1312,27 @@ published : false
   * 테스트 동제 도구 
   * 테스트 하네스 도구
 * 결함 : <b>소프트웨어가 개발자가 설계한 것과 다르게 동작하거나 다른 결과가 발생되는것</b>
+  </div>
+</details>
+
+### 중요도 <span style="color:green">C</span><br>
+
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+  </div>
+</details>
 
 # 8장 SQL응용
 
-## 중요도 <span style="color:red">A</span><br>
+### 중요도 <span style="color:red">A</span><br>
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+    
+
 * CREATE INDEX
 ```sql
 CREATE [UNIQUE] INDEX 인덱스명
@@ -1181,9 +1417,17 @@ ORDER BY 부서 ASC, 이름 DESC;
  MIN(속성명) | 그룹별 최소를 구하는 함수
  STDDEV(속성명) | 그룹별 표준편차를 구하는 함수
  VARIANCE(속성명) | 그룹별 분산을 구하는 함수
+  </div>
+</details>
 
 
-## 중요도 <span style="color:#0000ff">B</span><br>
+### 중요도 <span style="color:#0000ff">B</span><br>
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+    
+
 * DDL : DB를 구축 or 수정할 목적으로 사용하는 언어
   * CREATE, ALTER, DROP
 
@@ -1210,10 +1454,27 @@ DROP CONSTRAINT 제약조건명;
 INSERT INTO 테이블명([속성명1, 속성명2, ···])
 VALUES (데이터1, 데이터2, ···);
 ```
+  </div>
+</details>
+
+### 중요도 <span style="color:green">C</span><br>
+
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+  </div>
+</details>
 
 # 9장 소프트웨어 개발 보안 구축
 
-## 중요도 <span style="color:red">A</span><br>
+### 중요도 <span style="color:red">A</span><br>
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+    
+
 * 소프트웨어 개발 보안 요소
   * 기밀성 : 인가된 사용자에게만 접근이 허용
   * 무결성 : 인가된 사용자만 수정가능
@@ -1239,9 +1500,35 @@ VALUES (데이터1, 데이터2, ···);
 * 워터링 홀 : <b>웹 사이트를 사전에 감염시켜 사이트에 방문했을 떄 악성코드에 감염되게 하는 공격</b>
 * 랜섬웨어 : <b>내부 문서나 파일 등을 암호화해 사용자가 열지 못하게 하는 프로그램</b>
 * 보안의 3대 요소 : 기밀성 무결성 가용성
+  </div>
+</details>
+
+### 중요도 <span style="color:#0000ff">B</span><br>
+
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+  </div>
+</details>
+
+### 중요도 <span style="color:green">C</span><br>
+
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+  </div>
+</details>
 
 # 10장 프로그래밍 언어 활용
-## 중요도 <span style="color:red">A</span><br>
+### 중요도 <span style="color:red">A</span><br>
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+    
+
 * 헝가리안 표기법 : <b>변수명 작성 시 자료형을 의미하는 문자를 포함하여 작성하는 방법</b>
 * Python - 리스트 관련 주요 메소드
 
@@ -1261,9 +1548,34 @@ copy() | 리스트를 복사<br> a=[1, 2, 3], b = a.copy() -> a=[1, 2, 3] b=[1, 
 * \n = 줄바꿈
 * 자바 비트에서  ~ : not(부정연산후 원래값 알기위에 000000이되는 1한다음 부호비트에 따라 양수(0),음수(1)), ^ : nor(모두 같으면0 서로다르면 1), & : and, | : or
 * 비트에서 음수일때 왼쪽 시프트(<)일경우 0 오른쪽시프트(>)일경우 1이들어옴 
+  </div>
+</details>
+
+### 중요도 <span style="color:#0000ff">B</span><br>
+
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+  </div>
+</details>
+
+### 중요도 <span style="color:green">C</span><br>
+
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+  </div>
+</details>
 
 # 11-1장 프로그래밍 언어 활용
-## 중요도 <span style="color:red">A</span><br>
+### 중요도 <span style="color:red">A</span><br>
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+    
 
 * UNIX - <b>AT&T 벨(Bell) 연구소, MIT, General Eletric이 공동 개발한 운영체제</b>
 
@@ -1314,8 +1626,15 @@ copy() | 리스트를 복사<br> a=[1, 2, 3], b = a.copy() -> a=[1, 2, 3] b=[1, 
   * <b>ps</b> : 현재 실행중인 프로세스를 표시
   * <b>pwd</b> : 현재 작업중인 디렉터리 경로를 화면에 표시
   * <b>who</b> : 현재 시스템에 접속해 있는 사용자 표시
+  </div>
+</details>
 
-## 중요도 <span style="color:#0000ff">B</span><br>
+### 중요도 <span style="color:#0000ff">B</span><br>
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+    
 
 * UNIX 시스템의 구성
   * <b>커널</b> : UNIX의 가장 핵심적인 부분, 프로세스 관리, 기억장치 관리 등의 기능 수행
@@ -1381,9 +1700,25 @@ copy() | 리스트를 복사<br> a=[1, 2, 3], b = a.copy() -> a=[1, 2, 3] b=[1, 
   <br> * 환경변수 출력 명령어
   <br> - Windows : set
   <br> - UNIX, LINUX : set, env, printenv, setenv<span style="color:red"><small> * 필기 20.9</small></span>
+  </div>
+</details>
+
+### 중요도 <span style="color:green">C</span><br>
+
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+  </div>
+</details>
 
 # 11-2장 응용 SW 기초 기술 활용 2
-## 중요도 <span style="color:red">A</span><br>
+### 중요도 <span style="color:red">A</span><br>
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+    
 
 * IP 주소
   * <b>인터넷에 연결된 모든 컴퓨터 자원을 구분하기 위한 고유한 주소</b>
@@ -1472,12 +1807,19 @@ copy() | 리스트를 복사<br> a=[1, 2, 3], b = a.copy() -> a=[1, 2, 3] b=[1, 
 * 즉각 갱신 기법 : 트랜잭션이 부분 완료되기 전이라도 즉시 실제 데이터베이스에 반영하는 방법
 
 * 로킹 : 병행제어 기법 중 하나로 접근한 데이터에 대한 연산을 모두 마칠 때까지 추가적인 접근을 제한하는 기법
+  </div>
+</details>
 
 
 
 
 
-## 중요도 <span style="color:#0000ff">B</span><br>
+### 중요도 <span style="color:#0000ff">B</span><br>
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+    
 
 * IPv6의 주소 체계 세 가지
   * 유니캐스트
@@ -1490,7 +1832,17 @@ copy() | 리스트를 복사<br> a=[1, 2, 3], b = a.copy() -> a=[1, 2, 3] b=[1, 
 * TCP : 양방향 가상회선 제공
 
 * UDP : 데이터 전송 전에 연결을 설정하지 않는 비연결형 서비스를 제공하는 프로토콜
+  </div>
+</details>
 
 
 
 
+### 중요도 <span style="color:green">C</span><br>
+
+<details>
+  <summary></summary>
+  <div markdown="1">
+    
+  </div>
+</details>
