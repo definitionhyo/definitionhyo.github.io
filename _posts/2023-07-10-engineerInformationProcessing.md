@@ -239,6 +239,11 @@ published : false
   <summary></summary>
   <div markdown="1">
     
+  * 소프트웨어 생명 주기
+   <br> - <b>소프트웨어를 개발하기 위한 과정을 각 단계별로 나눈 것</b> 
+
+  
+
   </div>
 </details>
 
