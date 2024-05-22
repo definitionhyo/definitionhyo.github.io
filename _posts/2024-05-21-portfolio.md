@@ -13,7 +13,7 @@ categories:
 
 * 새로운 사용자 생성 후 기존 db 옮기는법(debeaver, mysql사용 기준) : db우클릭 -> 도구 -> dump(폴더,파일이름 작성후 start) 후 복사 하려는 곳에 restore
 
-* 동백시네마는 잘 되는데
+* 동백시네마는 잘 되는데(프로젝트 실행하니까 오류뜸->definer제거 해봄)
 zero는 오류 뜸
 Task execution failed
 
