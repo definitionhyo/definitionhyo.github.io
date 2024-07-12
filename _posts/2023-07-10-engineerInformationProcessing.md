@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "정보처리기사"
+title:  "정보처리기사 실기(시나공)"
 categories:
   - sundry
 published : false
