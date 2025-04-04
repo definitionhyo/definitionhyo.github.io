@@ -125,4 +125,395 @@ DataColletion -> map list 마우스오른쪽 type변경으로 바꿀수있음
 
 css,js 컴포넌트에 드래그로 가능(head,source에서 확인 가능)
 
-## 3강
+
+# 09.26 오전
+## 3강 화면그리기
+- css 
+- static position 절대적인 좌표X 그려진 순서대로 그리는 방법
+- absolute position : 절대적인좌표를 가지고 있음
+- relative position : 중간단계 
+- fixed , sticky : 고정좌표
+![alt text](image-15.png) 확인가능 default = static  
+- static일때는 크기만 표시, 좌표값 X -> 그래서 옮기지못함
+![alt text](image-16.png)  
+![alt text](image-17.png) 눌러서 그리기모드 변경(static -> absolute)  
+- absolute 하면 컴포넌트 하나마다 포지션값을 조절해야됨 -> 작업시간 오래걸림 -> static으로 작성함 
+- 제목 컴포넌트 : textbox  
+- css 도와주는 툴 있음, window -> preference -> websquare -> show style toolbar menu 체크 -> apply and close  
+![alt text](image-18.png) width 제거하면 화면에 가득참![alt text](image-19.png)  
+height 제거시 텍스트 크기값으로 나타냄(자식노드 따라감)  
+![alt text](image-20.png) 버튼을 오른쪽으로 옮기고 싶으면 div(웹스퀘어에서는 group)-> 컴포넌트 클릭후 그룹으로 감싸기 -> ![alt text](image-21.png)-> float 특성상 위쪽으로 나옴(감싸는 범위를 벗어남)-> 부모객체를 overflow 해줘야함 -> outline group 클릭 -> properties -> style 에서 작성 ![alt text](image-22.png), padding 으로 안쪽으로 여유공간, margin으로 바깥으로 공간![alt text](image-23.png)  
+- group 선택후 tablelayout 컴포넌트 -> 기준객체 뒤에 추가  
+![alt text](image-24.png)팔레트뷰어 이용안해도 해당 그룹 클릭후 스페이스 클릭-> 자주사용하는 컴포넌트  
+- 안쪽으로 들여쓰기 ->
+![alt text](image-25.png) 그룹화 후 padding 적용  
+- 라벨칸이 큰 경우 : th(아무칸) 더블 클릭 후 ![alt text](image-26.png) td 더블클릭 후 ![alt text](image-27.png) width 제거하면
+![alt text](image-28.png)  
+- 범위전체를 수정하려면 테이블 컴포넌트 클릭 후 f2클릭하면 상위 범위로 올라감 or outline 에서 선택
+- 적응형 ui 변경 ![alt text](image-29.png) adptive -> layout 변경, adaptiveThreshold 900으로 변경 -> 창을 줄였을때 유동적으로 변함(적응형ui)
+- 강사 : 웹스퀘어는 일일히 안함 외울 필요 X-> DesignSystem(css 적용되어있음) -> 00  페이지시작(그룹 자동) -> 02 페이지타이틀 -> 03 조회조건  
+- templte -> 신규페이지로 만들어짐
+
+## 4강 DataCollection과 Submission 처리방법
+- 사용해야되는 컴포넌트에 id 설정
+- 스크립트 -> 웹스퀘어에서 제공하는 유틸성자원(유틸성api) -> $p. 객체 사용
+- 콤보박스, 체크박스, 라디오 -> 목록 세팅해줘야함(더블클릭), 인풋박스등은 더블클릭 해도 안나옴 -> lavel 값은 상관x value값은 01 02 ... 으로 맞추는게 좋음 통신객체에 매핑 위해  ![alt text](image-30.png)  
+![alt text](image-31.png) alloption-전체, chooseoption-선택  
+- alloption : 빈값 선택 X, 강사:우리들은거의안씀
+- chooseoption : 빈값 O, 빈칸 출력 : $blank
+- 하드코딩(더블클릭후 직접)추가도 가능 but api활용 가능  
+![alt text](image-32.png)인덱스 생략시 선언된 순서대로, 0부터 출력  
+- 보통 row 1
+- 역할은 데이터 객체 만들어서 연결실습(직급=하드코딩, 성별=스크립트), 목록 세팅=List로 생성  
+![alt text](image-33.png)BindItemSet 체크해야 데이터객체 이용가능 Label=name, Value=code 선택  
+![alt text](image-34.png)use data 체크 필수  
+- use data 체크 해제 후 스크립트에서 json, xml등으로 데이터 저장가능  
+![alt text](image-35.png) append 변경해줘야함 기본은 default / true -> 뒤에 붙인다 false -> 대체  
+- json 스크립트를 많이 이용
+- BindItemSet 체크 해제하고 bind 방법 -> API를 통한 bind(동적) 이것도 많이 사용함  
+![alt text](image-36.png)  
+### submission(통신)
+![alt text](image-37.png)  
+중요한부분 : Reference, target, URL Action
+- Reference : 리퀘스트 정보(이미만들어진 데이터 객체중 선택)
+- target : response 같음
+- URL Action : 데이터를 얻어올 서블릿 주소
+- 강의: 로컬파일루트로 해봄 이미지 참조
+![alt text](image-38.png)send 후 Create DataCollection -> 생성해줌 -> 만든 데이터 Target에 추가 / 지금은 구조상 reference 확인 못함  
+![alt text](image-39.png) 전처리, 에러처리는 거의 공통개발자가 해줌 우리같은 단위 개발자는 보통 callback  
+- 조회 버튼 누르면 통신(submission)하도록
+- submission의 ID는 전역으로 올라가지 않음(다른거는 올라감) -> $p이용 -> $p.executeSubmission();  
+- ctrl+마우스오른쪽 -> 현재화면 디버그 실행 후 다시 조회하면  
+![alt text](image-40.png)  
+- 데이터 객체와 연결할때(결과를 input같은곳에 가져올때, ex:이름, 가입일) ref 속성 이용(종류가 너무 많아 구별 어려움) -> outline ->datacollection -> 선택 후 KeyInfo -> 해당하는 데이터를 드래그로 이동  
+![alt text](image-41.png)Emp_NM 드래그로 이름 InputBox에 -> 바인딩(왼쪽 위에 초록색 작은 네모) 됨  
+- DataList 붙여넣기 가능 ex) edu 폴더 training1_info.txt 복사후 data객체 클릭후 그냥 붙여넣기(데이터 문서 있을때) 
+- 이 방식과 아까 submission 통신해서 데이터 있으면 create Datacollection 방식있음, 직접추가도 있음
+
+## 5강 DataCollection 과 gridView 연동
+![alt text](image-42.png)  
+- 바인딩 할때 신규생성 하면 자동으로 열 행 추가  
+- 전체속성, 컬럼속성있으면 컬럼속성 적용됨 ex)그리드뷰 readonly속성 false, 사번밑 컬럼 readonly true  
+### 그리드뷰 속성들
+- autofit기능 : 채워줌
+- fitMinWidth : autofit 적용되는 최소한의 크기 여부 지정  
+- fixedColumn : autofit이 풀릴때 고정되어있을 컬럼
+- cloumnMove : 컬럼위치 변경 가능하게   
+sortable : 정렬기능 가능 여부(true후 헤더 더블클릭) -> 헤더 개별속성으로 sort 개별여부 가능  
+filter : 헤더 개별속성에서 가능
+usefilterlist : 그리드뷰 에서 true
+- 헤더에 filter true하고 그리드뷰 userfilterList true 후 헤더 filter 클릭해보면 보고싶은 항복들 체크박스로 필터링함 -> 편리함    
+![alt text](image-43.png)  
+- rownumVisible : true 선택시 그리드뷰에 순번 생김 / 속성으로 생긴 컬럼은 클릭 못함 / 헤더에 순번이란느 속성 주고싶으면 -> rowNumHeaderValue  
+![alt text](image-44.png)  
+![alt text](image-45.png)  
+-  rowStatusVisible : ![alt text](image-46.png)  수정시 표시해줌  
+- rowStatusHeaderValue : rowStatus 헤더에 입력  
+- 웹스퀘어에서는 편집하려면 더블클릭 해야함 
+- editModelEvent : 그리드뷰 클릭후 onclick 으로 변경
+- keyMoveEditMode  : tab으로 이동 후 편집모드 바로 편집모드
+- focusFlow : linear로 변경시 마지막 컬럼에서 tab 키 시 다음 행으로 이동
+- visibleRowNum : 화면에 표현할 행 수(all X)
+- code로 나오는것 속성 inpuyType설정 후 바인딩하면 됨
+- viewType : Icon 콤보,달력 편집전에 표시
+- displayFormat : 우편번호처럼 ###-###
+- displayFormatter : 함수형식 scwin.dis
+
+# 26.오후
+## 6강 gridView의 Event 및 API
+- 이벤트, API는 그리드 뷰의것을 사용한다
+- 컬럼별로는 어떻게 제어하는가?
+- 이벤트 스크립트에서 colID 인자를 사용하지만 셀클릭, 더블클릭 밖에없음(인덱스만 있어도 인덱스 사용 X) 
+- 인덱스만 있는경우에는 인덱스를 통해 ID를 구해주는 getColumnID(col); 사용 var _colId = this.getColumnID(col);  
+![alt text](image-47.png)  
+- 행추가 등 crud에 관련된 데이터들은 스크립트에서 그리드뷰리스트(ui_Memberlist)가 아니라 데이터쪽에서 찾아야함  
+![alt text](image-49.png) 0을 넣으면 맨위에 추가됨, 단순 추가 후 쓰려면 var로 설정  
+![alt text](image-50.png)  
+deleteRow는 상태만 삭제, remove는 진짜 삭제
+- 보통 delete를 많이씀 crud 한번에 하기위해
+![alt text](image-51.png)  
+- modified로 하면 CRUD중 R빼고 다 보냄 = delete 많이씀   
+- 다중으로 한번에 지우려고 체크박스 열 추가로 해도 데이터박스와 매핑이 되지 않으므로 disabled되어있음 -> 데이터박스에 추가해줘야함  ![alt text](image-52.png)  
+- out line -> 데이터에서 추가한 컬럼 선택 -> 속성 -> ignoreStatus -> true로 하면 값이 변하든 말든 상태값에 영향 안줌 -> 체크용으로 사용하는것들은 적용해야함
+- 이렇게 삭제하고난 뒤에는 안보이는곳에 저장해놓음 -> var obj <- 에 저장
+![alt text](image-53.png)  
+기존데이터 필요없으면  
+![alt text](image-54.png)  setData 빈배열 하면 빈배열로 바꿈(기억X ->메모리 효율성 높아짐)
+- 엑셀관련(다운로드 등)은 그리드뷰에 있음 -> ui_memberList
+- 파라미터 안주면 에러발생 -> {},[] 처럼 아무거나 줘야함  
+![alt text](image-55.png)  
+업로드 하면 헤더도 2번나오고 코드있는곳은 체크가 안되있음 -> JSON 형식으로 업로드하기 위해  
+![alt text](image-56.png)  
+
+- 웹스퀘어의 경우 그리드뷰 에서 각가의 로우 인덱스 클릭하면 안보이는곳에 가상의 단건 데이터를 저장함 -> 마스터 디테일 구조에서 출력하려면 드래그 하면됨 -> 그리드뷰처럼 rowIndex가 있으면 데이터 인덱스가 알아서 연결해줌 -> 마스터 디테일 구조에서 그리드 뷰가 있을때에는 데이터리스트 항목과 테이블의 항목이 연결됨
+![alt text](image-57.png)  
+- customformatter : ex)여자일 경우에만 색상 바꿀수있음  
+![alt text](image-58.png)  
+
+# 09.26 매핑(차장님)
+- MVC 흐름 
+- 컨트롤러 -> 서비스 -> 서비스 IMPl -> DAO -> Mapper
+
+# 09.29 오전（차장님）
+- 웹스퀘어 modifed 할때 자동으로 rowstatus가 들어가기 때문에 mapper.xml 의 WHERE EMPL_ID = #{EMPL_ID} <로 해줘야함
+- // 데이터 입력후 저장
+scwin.btn_save_onclick = function(e) {
+    com.sbm.execute(sbm_save); 
+}; 여기서 com.sbm.execute로 해줘야함
+- 안됐던 이유 ： 저장버튼 submission -> ID를 스크립트랑 같게 수정 / Reference -> DataCollection 추가
+- 데이터컬렉션, 서브미션 이 부분 개념 흐름 정확하게 공부하기
+- 그리드뷰에서 성별, 소속 셀렉트박스로 바꾸기 -> 그리드뷰 더블클릭 -> Body Table -> inptType -> select로 변경
+- 그리드뷰 성별, 부서번호 표시할때 성별의경우 W,M / 부서번호 01,02... -> 남성,여성 / IT, Sales 이런형식으로 표현하려면 -> 공통코드에 추가하고 script를통해 가져와야한다.
+- ex : ![alt text](image-59.png)  
+- 코드그룹 추가 후 저장 -> 코드그룹 선택 후 추가  
+![alt text](image-60.png)  
+- code : 그룹코드번호  
+- compID 
+  - 첫번째 인자 : 그리드뷰 밑의 GROUP의 SelectBox의 ID(성별 : gender, 부서번호 : dept)
+  - 두번째 인자 : 그리드 뷰의 ID:DB의 컬럼명  
+- 검색에서 검색 타입 설정  
+![alt text](image-61.png)  
+![alt text](image-62.png)  
+ID : 
+
+# 09.26 오후(exbuilder)
+- 웹스퀘어처럼 xml를 통한 ui하여 빌드하면 자바스크립트로
+- 웹스퀘어와 다르게 프론트만 만들고 배포 따로(넥사크로랑 비슷)
+- 웹스퀘어(html소스가 다있어서 css등 많이알아야 쓰기편함) -> 이런부분 보완한 프로그램 exBuilder
+- 강의 후 UI 형식은 넥사크로 형식으로 만들기  
+
+# exBuilder6 튜토리얼 강의 
+- 소스경로 : 모든 작업을 하는곳(파일만들고, 디자인배치, 스크립트 스타일(less), 외부 스크립트)
+- 배포경로 : 소스경로의 작업파일 컴파일
+- 시스템라이브러리패스 : 컴파일 되는곳(UDC파일, 모듈파일, language.json)각각 하나의 파일로 컴파일됨
+
+# exBuilder6 기본교육 UI프로젝트 구조 설명
+- part.less(css하는곳) 파일확장자는 컴파일 안됨 -> .less파일에 임포트 해야함(cleopatra-theme.less)
+- udc : 공통적으로 많이 사용하는 컨트롤러
+- env.json : 런타임 환경설정, 외부 스크립트 등 추가
+- .js파일을 연다 = 스크립트 탭으로 이동한다
+- .clx .js 같이 복사,이동
+
+# 컨트롤 배치 방법 및 편집기 뷰 설명
+- 소스탭 : xml파일
+- 스크립트 : window함수 등 사용 가능
+- 버튼, 그리드
+- 그리드 더블클릭하면 별도의 탭 생성됨
+- 바디 클릭후 일반 속성의 앱 -> title : clx파일의 제목  
+![alt text](image-63.png)  
+- 앱열기 : ctrl + shift + , : 입력한 검색어로 title과 앱 주석 내에서 탐색됨  
+![alt text](image-64.png)  
+- 스타일탭에서 설정된 설정이 .less에서의 설정보다 우선순위가 더 높음
+- 컨트롤 선택후 Enter누르면 자주 사용하는 이벤트 자동생성
+
+# Assist 뷰 설명 
+- ![alt text](image-65.png)  
+- 앱 주석 : clx 파일에 대한 설명(앱열기에서 검색 가능)
+- 스타일 시트 : 현재 앱에서만 사용하는 css등이 있는경우 css 추가 가능
+- 외부 스크립트 : 동일 현재 앱에서만 사용하는 스크립트가 있는 경우
+
+# Outline 뷰 설명
+- ctrl + 방향키 로 레이아웃 순서 가능
+- comment : 디자인 탭에서 툴팁으로 확인 가능
+- visible(눈 모양) : 보이지 않게 해줌
+- enable(자물쇠) : 디자인 탭에서 선택 못하게 만들어줌
+- 위에 것들은 디자인 탭에서만 적용됨 실제 사이트(런타임에서는) 적용 X
+
+# Model 뷰 데이터 셋 설명
+- 데이터셋 : 그리드, 콤보박스, 트리처럼 목록형 에서 value값을 보여줄때 사용 / 복수의 컬럼과 복수의 행을 가져서 목록형 컨트롤들과 사용
+- 행은 추가 거의 안함 : 서버에서 데이터를 가져와서 보여주기때문에 / 선행데이터 넣을때만 추가
+- 열 : name 의 column값은 DB에서 가져오는 컬럼명과 같아야함(대소문자,_)
+- dataType :    
+  - expression : 클라이언트 단에만 존재하는 컬럼(컬럼들을 이용해서 새로운 컬럼 만들기 등에 사용)  ![alt text](image-66.png)  
+  ![alt text](image-67.png) ColumnBuilder로 Db와 연동하여 Select문으로 DB 컬럼문 가져옴  
+  ![alt text](image-68.png)  
+- sortCondition : 로드 되는 데이터 정렬위해 사용(column2 asc)
+- filterCondition : 필터 조건식
+- comment : 주석  
+- (데이터)뷰 : 데이터 셋의 자식 데이터 셋
+
+# Model 뷰 데이터 맵 설명
+- 데이터 맵 : 복수의 컬럼을 갖고 각 컬럼마다 하나의 키 값
+
+# 서브미션
+![alt text](image-69.png)  
+- action : requestmapping 주소
+- 요청데이터 : 서버로 어떤 데이터 셋/맵 전송할건지
+- 응답데이터 : 서버에서 어떤 데이터를 반환할건지  
+![alt text](image-70.png)  
+- payload(요청데이터) : 데이터 셋 일때만 활성화 되어 사용가능 / modified : 데이터 셋의 수정된 행만 서버로 전송 가능
+- add(응답데이터) : false - 서버에서 가져온 값으로 대체 / true - 기존 데이터에 추가  
+![alt text](image-72.png) 
+- 서브미션 찾는 스크립트(app.lookup)
+
+# Language 뷰 설명
+- help -> helpContents 국제화 검색
+
+# palette 뷰 설명
+- 디자인 탭 에서 ctrl + space 로 팔레트 추가 가능
+
+# XY레이아웃
+![alt text](image-73.png)  체크해제 = 엥커 해제 : 다 해제시 정중앙  
+- 팔레트 더블클릭 후 shift키를 누른상태 = 여러개 동시에 생성 가능
+
+# 반응형 XY 레이아웃
+- 바디 마우스 오른쪽 클릭 후  
+![alt text](image-74.png) : 화면 줄일시 자동으로 밑으로 내려감
+- 태블릿, 모바일 크기에서 각각 변경하여 크기조절에 따라 변경 가능
+
+# 폼 레이아웃 설명
+- 그룹 선택후 폼 레이아웃으로 변경
+- 원래 고정 ->![alt text](image-75.png) 행 끝의 픽셀 더블클릭 -> 자동크기 사용시 value 크기만큼 늘어남
+
+# 버티컬 레이아웃 설명
+- 그리드 만들고 데이터셋 만들고 드래그
+- 그리드 autoSize 지정시 값 만큼 커져서 값을 다 보여줌
+- 바디 레이아웃 -> distribution : 레이아웃 내 컨트롤들의 배치 설정
+
+# 플로우 레이아웃 설명
+- 레이아웃 탭의 lineWrap 속성 : 개행 허용 여부 설정(false = 가로로 다 표현됨)
+- 클릭 후 allowNewLine : 개행여부설정
+
+# 템플릿 설명
+: 자주 사용하는 화면 배치 Templates 으로 설정
+![alt text](image-76.png) 그룹 팔레트 클릭후 마우스 오른쪽클릭 -> UI 템플릿으로 등록 -> 같은 프로젝트니까 프로젝트 공유 UI 등록
+- templates 폴더 에 템플릿을 만들면 새 파일 생성시 만들었던 템플릿 사용 가능
+
+# 데이터 셋 바인딩 설명
+- 바인딩 : 외부에 있는 값을 가져와서 속성 또는 스타일에 매핑해서 출력할때 사용
+![alt text](image-77.png)초록색 점 : 바인딩 X / 파란색 소켓 : 바인딩 가능한 속성
+- 스타일 속성에 바인딩 추가 시 오타 주의
+- ![alt text](image-78.png)  
+- 데이터 셋 바인딩 : 데이터셋은 복수의 행과 복수의 열의 다중 데이터를 가짐
+
+# 데이터 맵 바인딩 설명
+![alt text](image-79.png)  
+![alt text](image-80.png)   - blue 출력![alt text](image-81.png)  
+
+# 앱 속성 바인딩 설명
+- Assist 뷰의 출판된 속성 추가했을때 추가한 앱 소성이 바인딩 소스의 앱 속성 항목으로 나타남
+
+# 다국어 사전 바인딩
+# 익스프레션 바인딩 설명
+- ![alt text](image-82.png)문자열은 쌍따옴표 숫자는 그대로  
+
+# 상대컬럼 바인딩 설명
+- 상대 컬럼 바인딩은 바로 못함
+![alt text](image-83.png) 클릭 후 속성창의 바인딩 문맥 더블클릭
+- 문맥유형 : 어떤 외부에서 값을 가져올지
+![alt text](image-84.png)
+- 데이터 로우 컨텍스트 : 로우가 있는 데이터(데이터 셋)
+- 데이터 맵 컨텍스트 : 데이터 맵에서
+- 선택 행 컨텍스트 : 컨트롤에서 값을 가져옴(가장 많이 사용)
+- 그룹 하나 만들어서 바인딩 문맥 클릭 -> 그리드 선택 -> 인풋텍스트에 데이터셋 컬럼 하나씩 드래그 -> 브라우저에서 선택행 클릭시 출력
+
+# 기본 컨트롤 설명
+- 아웃풋 컨트롤 : 값 입력X 출력만O 데이터타입 : String Number(format 속성) Date(dateValueFormat속성, format속성으로 어떤 형식인지)
+- 인풋박스 : secret 속성 true -> 암호처리
+- 셀렉션 계열
+  - 콤보박스 : multiple 속성으로 다중값 선택 설정 
+
+# 그리드 설명
+- 그리드 생성 후 값을 보여주려면 -> 데이터셋을 만들어야함 -> 만들고 드래그
+- autofit : 공간이 남으면 자동으로 늘려줌 / 일반적으로 체크박스나 행 번호 컬럼은 autofit은 False / 데이터를 갖는 컬럼은 true로 설정함
+- 푸터 : 그리드 탭에서 왼쪽 회색 우클릭 -> 푸터추가
+![alt text](image-85.png)  
+
+# 그리드 Split 기능 설명
+![alt text](image-86.png)
+left, rightSplit : 몇번째까지 고정할건지
+- top,bottom Split은 전체 행의 갯수를 알수 없어서 그리도  속성에 없음 -> 스크립트에서 작성해야함
+![alt text](image-87.png)  
+
+- udc기능설명 3:59 해야함
+
+# 09.30 오전
+# UDC 기능 설명
+- udc.cls 파일에서 버튼모음 만들어서 -> grid.clx 파일에 버튼모음 붙여넣기 -> udc.clx 파일 -> assist -> 출판된속성 -> 형식 : control 추가  
+![alt text](image-88.png)  
+-> udc 컨트롤 선택하면 properties -> grid 속성 생김
+- ctrl + shift + / : 타입 주석 추가  
+![alt text](image-89.png)  
+![alt text](image-90.png)  
+- udc파일의 저장버튼은 이벤트를 출판하여 직접 로직 작성 -> udc 이벤트 출판 후 추가한 앱에서 udc 우클릭 -> 이벤트 -> 출판한 이벤트 추가
+
+# 공통모듈 설명
+- new -> 새 공통모듈
+- UDC와 비슷하게 출판과정을 거침
+- 4가지 방법
+  1. 글로벌 출판방식
+    - globals 예약어 사용하면 스크립트 작성할 때 모듈 선언X 바로사용 가능  ![alt text](image-91.png)  
+    - clx파일 에서는  
+    ![alt text](image-95.png)
+  2. 모듈 출판 방식
+    - 멤버변수 형태로 출판 후 사용하는 clx파일에서 해당변수 선언하여 사용
+    - exports 를 사용하여 출판
+    - ![alt text](image-92.png)
+    - 사용하는 clx파일에서는 require을 통해 모듈 사용
+  3. 오브젝트 출판 방식
+    - ![alt text](image-93.png)
+    - ![alt text](image-94.png)
+  4. 비표준 출판 방식
+    - 선언하지 않고 바로 사용하는 방식
+    - 모듈  ![alt text](image-96.png)  
+    - clx파일  
+    ![alt text](image-97.png)
+
+# 임베디드 앱 컨트롤 및 다이얼로그 기능 설명
+- 앱 안에 앱을 넣음
+- 스크립트 창에서  
+![alt text](image-98.png)  
+- "" 안에서 ctrl+space로 가져올수도 있음
+## 다이얼 로그 
+- 버튼 클릭후 나타나는 팝업창
+- 스크립트 :  
+
+# 서버 연동 방법
+- dynamic 프로젝트 만들고 프로퍼티 -> Project Facets 에 exbuilder 추가 / Deployment Assembly에 Add로 추가
+- webContent/WEB_INF/web.xml 에 리스너 추가  
+![alt text](image-99.png)
+- *.clx 패턴을 처리할 수 있도록 url-pattern을 추가
+![alt text](image-100.png)  
+- resources -> config -> context.xml에 리졸버 추가  
+![alt text](image-101.png)  
+- src -> com.exbuilder.web -> CleoptraUIController.java 파일 
+
+# 그리드 실습 예제 설명
+- edu-ui -> frame -> EmployeesList.clx -> Assist 앱주석 보고 해보기
+
+- 행 추가  
+![alt text](image-102.png)
+- 행 제거
+![alt text](image-103.png)
+- 서브미션 subList의 통신이 정상적으로 완료되었을 때, 그리드를 redraw하는 기능을 구현합니다.
+![alt text](image-104.png)  
+- 앱인스턴스 이벤트중 init이벤트를 연결하여 서브미션 subInit을 send하는 기능을 구현합니다. -> 루트 컨테이너 선택 후(배경) 우클릭 -> init
+- init 이벤트 : 디자인 탭에 배치 될 떄 발생하는 이벤트
+- load : 디자인 탭에 배치가 모든 끝난 후에 발생하는 이벤트
+- 엔터키 눌렀을때 조회되도록 : 이벤트 -> 키보드 -> keydown 
+![alt text](image-105.png)  
+
+# 09.30 오후
+- 팀장님의 업무, 용어 강의
+- exbuilder 조회 화면 컨트롤러랑 만들기
+  - 404 떠서 차장님 여쭤본 결과 - 잘못된 컨트롤러 가져옴<
+  - json 데이터 확인 http://localhost:8080/itpinc/board/list.do <- 
+  - 컨트롤러 서비스 매퍼 할 차례
+
+# 10.01 오전(차장님 리액트, 뷰)
+- 10년도 중반 DOM 객체관리 위해 제이쿼리 의존성 높아짐
+- 부트스트랩5 부터 포기한다함
+- 원래 웹 앱 둘다 스크립트 각각 작성해야함
+- 싱글 페이지 어플리케이션(웹, 모바일 앱의 통합)등장 ex)페북(메타)
+- 초기 리액트 오픈소스X(메타)
+- 리액트 나오고 자바스크립트 전 후 가 변함
+- 리얼DOM : 정밀지도
+- 리액트 : 자바스크립트 라이브러리 / 가상DOM / 약도
+- 리액트가 리얼DOM객체를 관리하고 사용자가 리액트가 제공하는 기능 사용
+- 리액트 기반 프레임워크 Next.js
+- 리액트 대부분 기능 : 플러그인으로 제공(전역상태관리 : Redux)
+- vue : 필요한 대부분 기능 포함
+- 리액트 : 잦은 업데이트 / 라이브러리, 플러그인 개발해도 버전업, 버그수정 자주 일어남 -> 노드.js에서 버전락 // 
+- 리액트 : return 에서 하나의 함수 나와야되니까 빈태그<> </>,section, div등 큰 틀로 명시
+- 리액트 : 선언형
+- 네이티브앱 : 디바이스에 다운로드하여 설치할 수 있는 앱
