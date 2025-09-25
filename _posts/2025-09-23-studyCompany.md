@@ -61,3 +61,68 @@ Bindint-> dataset 고르고 codecolumn과 datacolumn 설정
     - 두가지 버튼중 ... 으로 바로 삽입
 4. CSS
 5. 신세계이엔씨 클레임 관련 실무 프로젝트 흐름 공부
+
+# 09.25 오전 xplatform 동영상 강의 
+1. sdi -> mainframe -> childframe -> form : 하나의 화면
+2. mdi : 여러개의 화면 vframeset:수직 h~:수평 frameset:자유공간 / 크기조절 : 해당 frameset의 Misc.separatesize로 설정 ex)200,* / 타이틀바로 못움직이게 고정시키려면 ChildFrame의 Misc.showtitlebar -> false변경
+3.xPlatform 에서 왼쪽 메뉴창 트리형태는 그리드로 만들어서 Dataset 넣고 body 클릭후 Action -> disaplaytype 변경
+
+# 09.25 오후 Websquare5 인강
+https://www.youtube.com/watch?v=KEPuK3erXWM&list=PL7a9HhkvOVb09T_2Xdxs4sPgyDjkGlT9G&index=1
+## 1강
+- WebContent폴더 하위에서 xml로 만들지만 실행될떄는 wpack의 js파일로 실행됨(있어야함, 없으면 project->rebuilding)  
+
+meta 적혀있으면 거의 설명
+
+![alt text](image-5.png)
+dataset에 해당  
+단건의 구조 : dataMap  
+다건의 구조 : dataList  
+  
+![alt text](image-6.png)  
+ajax처럼 주고받는 데이터    
+
+- <font color="red">컴포넌트 Property에서 id 설정해야함</font></br>
+
+![alt text](image-3.png)
+![alt text](image-4.png)  
+applyformat : 적을때도 포맷이 유지되게  
+displayForm : #,### = 3자리마다 , 출력  
+이벤트 : 컴포넌트 누르고 이벤트 -> 스크립트  
+![alt text](image-7.png)
+속성 initValue(123456789)에 값이 있어도 스크립트에 정의된 함수를 먼저 읽고(실행x) 생성 후 속성 적용 -> onpageload 적용 -> 987654321  
+
+## 2강
+출력 관련
+![alt text](image-9.png)
+![alt text](image-8.png) akt+enter로 2줄로 입력 해놓으면 true일때 br태그 표시됨   
+![alt text](image-10.png)false일때  
+- escape는 입력된 문자의 태그를 치환해줌 / 일반적으로는 스크립트 공격 방지를 위해 치환하지않음 / 출력에서만 이용가능  
+</br>
+<font color="red">앱스퀘어에서 부르는 컴포넌트 이름 </font></br> 
+- 단순한 콤보 =  selectBox  
+- 버튼 = trigger  
+- div = group  
+- mdi = windowcontainer
+![alt text](image-14.png) tagname은 모든 html 태그 가능 default=div  
+그룹 클릭후 inputbox등 삽입가능  
+- grid = gridview
+<br>
+
+멀티 업로더의 경우 기본 mdoe 는 flash지만 현재 사용하지않음<br> 
+![alt text](image-13.png)변경해서 사용<br>  <br>
+웹스퀘어에서는 iframe 잘 사용하지 않음 대신 WFrame사용
+Wframe=include하는 형태 하나의 페이지안에 모든 영역 띄움  
+그리드뷰 이용시 드릴다운 사용, 데이터만 계층형 사용할때는 트리 사용  
+팝업 : 요즘은 Layer Popup 자주 사용 
+--- 
+### Design -> Outline -> Head : 화면과 같이 데이터 볼수있음   
+DataColletion -> map list 마우스오른쪽 type변경으로 바꿀수있음   
+드래그로 바인딩 가능
+---
+
+유튜브 강의하는 사람이 source탭은 이용 안하는게 좋다고 얘기함  
+
+css,js 컴포넌트에 드래그로 가능(head,source에서 확인 가능)
+
+## 3강
