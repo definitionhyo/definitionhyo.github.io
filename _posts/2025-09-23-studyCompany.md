@@ -649,3 +649,11 @@ UNION으로 두 쿼리를 합치면 하나의 결과셋이 되기 때문에, 그
 ![alt text](image-122.png)  
 
 - 백엔드에서 보내주는 자료형에 따라 list로 보내주는경우 response.data.list / 객체로 보내주면 response.data.detail -> network에서 확인해보자
+
+# 10.16 페이징처리
+## jspf -> vue3 사용하기
+- component에 vue파일 생성(첫글자 대문자 / 새로 구분하기위해) 
+- vue2 페이징jspf 파일 : props 외부에서 가져오는거, 함수는 고도화 했듯이 / computed
+
+# 뷰 홈페이지
+- Props : 컴포넌트에 등록할 수 있는 사용자 지정 속성 ex)title
