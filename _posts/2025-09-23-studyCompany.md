@@ -586,3 +586,66 @@ UNION으로 두 쿼리를 합치면 하나의 결과셋이 되기 때문에, 그
 
 - 데이터 바인딩: 단방향 바인딩, 직접 제어 필요
 - next.js로 프레임워크처럼 사용(양방향 시켜줌)
+
+# 10.13 오전 스프링(차장님)
+- 정적인 웹 + 플러그인 형태로 코드해석 = 초창기 동적 웹(php ...)
+- 동시접속 오류등 개선 -> 서블릿(자바 코드를 html로 변환 시켜줌(요청,응답))
+- 서블릿(web.xml에서 매핑 설정)
+
+# 10.14 뷰 게시판 crud 기능
+- 게시판 검색 기능
+  - 콤보박스 태그에 v-model=type
+  - input에 v-model=keyword
+  - 검색 버튼  @click.prevent 로새로고침 방지(버튼에 submit 태그 있는것들)
+  - 
+
+# 10.15 뷰 게시판 crud 기능
+- 상세 화면 빈 화면 오류 - 뷰 : delete 같은 경우(예를든거임 기본 예약이 걸려있으면 코드는 다 불러와져도 렌더링?이 안됨) fn_붙여서 구분해주면 오류해결됨
+
+# 10.15 오전(차장님)
+- 리액트 : 가상 DOM (라이브러리) vs 앵귤러 : 리얼DOM(프레임워크)
+- vue : 두개의 장점 섞음 (가상DOM, 단,양방향 바인딩, 프레임워크) -> 3.0부터는 리액트(완전 널리퍼짐) 따라감 -> options(API))에서 Composition 바뀜(뷰2+최신트렌드)
+- vue 2.0 : 스크립트 안에서 테이터 함수들 다 한곳에서 관리
+- vue 3.0 : 스크립트 밖에서 
+- vue 홈페이지![alt text](image-108.png) Options=2.0 Composition=3.0
+
+# 10.16
+## vue3
+![alt text](image-109.png)  
+- getCurrentInstance : 컴포넌트의 내부 인스턴스를 가져와서, 그 안의 전역속성(appContext.config.globalProperties)등에 접근 할 수 있게 해줌
+- userRouter : 라우트 조작(이동,현재 앱의 라우트 인스턴스 가져옴)
+- useRoute : 현재 라우트 정보 조회(현재 라우트 주소를 가져옴(주소, 파라미터, 쿼리))
+- router : router 폴더의 index.js 에 따른 매핑으로 이동시킴(파람전달 가능)
+- .config.globalProperties.OO : OO 전역변수 사용하게해줌 
+- router.push(파라미터) : 파라미터 값을 보냄 받는법 -> useRoute import 후 const 생성 -> 
+![alt text](image-112.png)  
+- query로 보내는 이유 ![alt text](image-115.png)
+![alt text](image-114.png)
+- 객체 데이터 출력시 , 분리해서 출력하기  ![alt text](image-110.png) 
+- router로 보내는 데이터는 문자열 형식으로 보냄 -> 형변환 필수!(JS문법으로 형변환) / 이 프로젝트는 스프링에서 문자열로 받아서 상관없음
+- ref([]) : 배열 ex) 여러개의 게시글, ![alt text](image-116.png)
+- ref({}) : 객체 ex) 단일 게시글 상세정보, ![alt text](image-117.png)
+- vueUpdate부분 백엔드랑 맞추기 : put으로 바꾸고 파일이 없기떄문에 formdata없애고 뷰2데이터처럼 그냥 바인딩해서 직접 보냄(작업중)
+- 15:40 기본 CRUD, 검색기능 성공
+
+# 10.16 로그인 기능
+- watch함수 쓸 예정
+- 게시판 번호로하면 중간에 지워진 게시판 조회 못하니까 rnum(순번)을 boardList에서 파라미터로 보내줌
+- params로하면 url에 붙으니까 라우터에 :idx만 있기 떄문에 query:{} 로 보내줌 ![alt text](image-118.png)
+- watch 함수 차이![alt text](image-119.png)newVal: 바뀐 후의 값 oldVal: 바뀌기 전의 값
+- 객체나 배열 출력할땐 +말고 ,
+- 이전글다음글 : 단순쿼리, 오라클 내장함수
+- oracle 비교 대상값 비교 오른쪽 ex) idx < :idx
+- 실시간 데이터 변경 없는것들 = 그냥 서버에서 가져와서 뿌림(데이터가 안변하니까)
+- 게시글처럼 실시간으로 변하는 것들 : 서버에서 데이터를 미리 가져오지 않고 버튼을 누르는 시점(현재글 idx)
+- 다음글이 없는데 만약에 생성되면 그 데이터를 어떻게 가져올거냐
+
+- 조회할때 현재 게시글 번호 기준 이전게시글, 다음게시글 
+
+- input string 오류 : idx값에 p로 드렁가는줄 알았음![alt text](image-120.png)
+< 수정 후 작동되는 쿼리 기본 쿼리는 test="preOrNext =='p'"했었는데
+    ''는 캐릭터로 생각하기때문에 반대로해줘야함  
+![alt text](image-121.png)
+![alt text](image-122.png)  
+
+- 백엔드에서 보내주는 자료형에 따라 list로 보내주는경우 response.data.list / 객체로 보내주면 response.data.detail -> network에서 확인해보자
