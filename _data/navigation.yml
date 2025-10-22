@@ -1,0 +1,25 @@
+# main links
+main:
+  - title: "Quick-Start Guide"
+    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+  # - title: "About"
+  #   url: https://mmistakes.github.io/minimal-mistakes/about/
+  # - title: "Sample Posts"
+  #   url: /year-archive/
+  # - title: "Sample Collections"
+  #   url: /collection-archive/
+  # - title: "Sitemap"
+  #   url: /sitemap/
+
+# 사이드바 추가 - 0705
+sidebar-category:
+  - title: "카테고리"
+    children:
+      - title: "Programming Language"
+        url: "/programminglanguage"
+      - title: "Projects"
+        url:  "/projects"
+      - title: "Sundry"
+        url:  "/sundry" 
+      - title: "Portfolio"
+        url:  "/portfolio" 
